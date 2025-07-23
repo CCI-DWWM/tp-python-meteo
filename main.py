@@ -10,7 +10,7 @@ templates = Jinja2Templates(directory="templates")
 @app.get("/", response_class=HTMLResponse)
 async def formulaire_get(request: Request):
     # Formulaire vide
-    return templates.TemplateResponse("index.html", {"request": request, "commune": None, "meteo": None})
+    return templates.TemplateResponse("item.html", {"request": request, "commune": None, "meteo": None})
 
 @app.post("/", response_class=HTMLResponse)
 async def formulaire_post(request: Request, code_postal: str = Form(...)):
@@ -21,7 +21,7 @@ async def formulaire_post(request: Request, code_postal: str = Form(...)):
         if lat and lon:
             meteo = model.get_meteo(lat, lon)
 
-    return templates.TemplateResponse("index.html", {
+    return templates.TemplateResponse("item.html", {
         "request": request,
         "commune": commune,
         "meteo": meteo

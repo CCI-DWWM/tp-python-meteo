@@ -10,16 +10,17 @@
     </div>
 
     <div class="container">
-        <form id="formulaire" class="needs-validation" novalidate method="get" action="/formulaire">
-          <div class="mb-3">
-            <label for="nombre" class="form-label">Entrez un nombre (min 5 chiffres) :</label>
-            <input type="text" id="nombre" class="form-control" min="1" maxlength="5" required name="codePostal">
-            <div class="invalid-feedback">
-              Veuillez entrer un nombre entier positif de minimum 5 chiffres.
-            </div>
-          </div>
-          <button type="submit" class="btn btn-primary">Envoyer</button>
-        </form>
+        <form method="post" action="/formulaire" novalidate>
+  <div class="mb-3">
+    <label for="nombre" class="form-label">Entrez un nombre (min 5 chiffres) :</label>
+    <input type="text" id="nombre" class="form-control" maxlength="5" required name="code_postal">
+    <div class="invalid-feedback">
+      Veuillez entrer un nombre entier positif de minimum 5 chiffres.
+    </div>
+  </div>
+  <button type="submit" class="btn btn-primary">Envoyer</button>
+</form>
+
     </div>
 
     <div class="container">
