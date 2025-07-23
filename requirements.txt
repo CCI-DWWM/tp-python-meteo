@@ -1,0 +1,5 @@
+fastapi[standard]~=0.116.1
+jinja2
+requests~=2.32.4
+mysql-connector-python~=9.4.0
+python-dotenv~=1.1.1
