@@ -1,4 +1,4 @@
-# tp-pyhton-meteo
+# tp-python-meteo
 
 ## Description
 
