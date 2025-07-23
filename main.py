@@ -24,7 +24,8 @@ async def formulaire_post(request: Request, code_postal: str = Form(...)):
     return templates.TemplateResponse("item.html", {
         "request": request,
         "commune": commune,
-        "meteo": meteo
+        "meteo": meteo,
+        "codePostal": code_postal  # <- ajoute ça pour passer le code postal au template
     })
 
 

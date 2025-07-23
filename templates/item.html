@@ -10,7 +10,7 @@
     </div>
 
     <div class="container">
-        <form method="post" action="/formulaire" novalidate>
+        <form id="formulaire" class="needs-validation" novalidate method="post" action="/">
   <div class="mb-3">
     <label for="nombre" class="form-label">Entrez un nombre (min 5 chiffres) :</label>
     <input type="text" id="nombre" class="form-control" maxlength="5" required name="code_postal">
@@ -25,20 +25,22 @@
 
     <div class="container">
         <h2>Résultat du code postal : {{ codePostal }}</h2>
-        <p> Commune :  {{ result }}</p>
+        <p>Commune : {{ commune }}</p>
     </div>
 
-  {% if meteo %}
-  <h3>Météo actuelle :</h3>
-  <ul>
-    <li>Température : {{ meteo.temperature }} °C</li>
-    <li>Vitesse du vent : {{ meteo.windspeed }} km/h</li>
-    <li>Direction du vent : {{ meteo.winddirection }} °</li>
-    <li>Condition : {{ meteo.weathercode }}</li>
-  </ul>
-{% elif commune %}
-  <p>Météo non disponible.</p>
-{% endif %}
+    <div class="container">
+          {% if meteo %}
+          <h3>Météo actuelle :</h3>
+          <ul>
+            <li>Température : {{ meteo.temperature }} °C</li>
+            <li>Vitesse du vent : {{ meteo.windspeed }} km/h</li>
+            <li>Direction du vent : {{ meteo.winddirection }} °</li>
+            <li>Condition : {{ meteo.weathercode }}</li>
+          </ul>
+        {% elif commune %}
+          <p>Météo non disponible.</p>
+        {% endif %}
+    </div>
 
 
 </body>
